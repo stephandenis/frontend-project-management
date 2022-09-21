@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .sidebar {
-  @apply w-64 bg-white shadow flex-col items-center justify-between;
+  @apply w-64 bg-white  flex-col items-center justify-between;
 }
 
 .sidebar-route {
