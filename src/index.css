@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sidebar {
+  @apply w-64 bg-white shadow flex-col items-center justify-between;
+}
+
+.sidebar-route {
+  @apply rounded-md flex w-full justify-between cursor-pointer items-center m-3 p-3;
+}
