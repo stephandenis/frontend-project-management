@@ -1,14 +1,19 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { UserContext } from './context/userContext';
+import Layout from './layout/Layout';
+import Home from './pages/home';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div>
-      <h1 className='text-3xl font-bold underline'>Hello World</h1>
-    </div>
+    <UserContext.Provider value={null}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route path='/home' element={<Home />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </UserContext.Provider>
   );
 }
 
