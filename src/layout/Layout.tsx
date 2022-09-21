@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Sidebar from '../components/Sidebar';
 
 const Layout = () => {
@@ -10,6 +11,7 @@ const Layout = () => {
           <Outlet />
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

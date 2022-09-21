@@ -1,4 +1,6 @@
 import { useQuery } from '@apollo/client';
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { GetUsers } from '../../graphql/users/queries';
 
 interface User {
@@ -13,6 +15,12 @@ interface User {
 
 const Users = () => {
   const { data, error, loading } = useQuery(GetUsers);
+
+  useEffect(() => {
+    if (error) {
+      toast.error('Failed to get users');
+    }
+  }, [error]);
 
   if (loading)
     return (
@@ -31,7 +39,7 @@ const Users = () => {
                 Name
               </th>
               <th className='px-4 py-2 font-medium text-left text-gray-900'>
-                Lastname
+                Surname
               </th>
               <th className='px-4 py-2 font-medium text-left text-gray-900'>
                 Email
